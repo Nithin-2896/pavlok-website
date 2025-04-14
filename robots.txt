@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nithin-2896.github.io/pavlok-website/sitemap_pavlok.xml
