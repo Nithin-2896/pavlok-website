@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-/* =====================================================================
-   CSS Reset & Base Styles
-===================================================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +6,7 @@
 }
 
 body {
-  /* Use a robust font-stack with fallbacks */
+  /* font-stack with fallbacks */
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   background-color: #f5f7fa;
@@ -18,9 +15,7 @@ body {
   min-height: 100vh;
 }
 
-/* =====================================================================
-   Keyframes Animations
-===================================================================== */
+
 /* Fade in from below */
 @keyframes fadeIn {
   from {
@@ -45,14 +40,11 @@ body {
   }
 }
 
-/* =====================================================================
-   Header & Navigation
-===================================================================== */
+
 .main-header {
-  background-color: #2c5e9e; /* Brand Blue */
+  background-color: #2c5e9e; 
   padding: 0.8rem 1rem;
   width: 100%;
-  /* Apply fadeIn animation to header */
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -64,7 +56,7 @@ body {
   margin: 0 auto;
 }
 
-/* Brand logo styling with proper fallback and contrast */
+
 .brand-logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -72,7 +64,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Navigation list (default horizontal for Desktop) */
 .menu-list {
   list-style: none;
   display: flex;
@@ -331,308 +322,3 @@ main {
   .sub-title {
     font-size: 1.4rem;
   }
-=======
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  /* font-stack with fallbacks */
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  background-color: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-
-/* Fade in from below */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Slide in from left */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-.main-header {
-  background-color: #2c5e9e; /* Brand Blue */
-  padding: 0.8rem 1rem;
-  width: 100%;
-  /* Apply fadeIn animation to header */
-  animation: fadeIn 0.8s ease-out;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Brand logo styling with proper fallback and contrast */
-.brand-logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-/* Navigation list (default horizontal for Desktop) */
-.menu-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0;
-  /* Apply slideIn animation to navigation items */
-  animation: slideIn 0.8s ease-out;
-}
-
-/* Navigation links */
-.menu-list a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 0.5rem 0.8rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.menu-list a:hover,
-.menu-list a:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 1.5rem auto;
-  padding: 0 1rem;
-  animation: fadeIn 1s ease-out;
-}
-
-.page-heading {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  color: #2c5e9e;
-}
-
-.content-block {
-  background: #ffffff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-out;
-}
-
-.block-title {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #2c5e9e;
-}
-
-.sub-title {
-  font-size: 1.3rem;
-  margin: 1.2rem 0 0.8rem;
-  color: #3a6fb0;
-}
-
-.intro-paragraph {
-  font-size: 1.05rem;
-  margin: 1rem 0;
-  color: #444;
-}
-
-
-.custom-list {
-  margin-left: 1.5rem;
-  color: #444;
-}
-
-.custom-list li {
-  margin-bottom: 0.6rem;
-}
-
-
-.banner-img,
-.banner-img-work {
-  width: 100%;
-  border-radius: 6px;
-  margin: 1.2rem 0;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.banner-img-work {
-  max-height: 500px;
-}
-
-.faq-group {
-  margin-top: 1.5rem;
-}
-
-.faq-entry {
-  background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
-  overflow: hidden;
-}
-
-.faq-query {
-  background: #2c5e9e;
-  color: #ffffff;
-  padding: 0.8rem 1rem;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.faq-response {
-  padding: 0 1rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.faq-entry.active .faq-response {
-  padding: 1rem;
-  max-height: 500px;
-}
-
-
-.site-footer {
-  background: #2c5e9e;
-  color: #ffffff;
-  text-align: center;
-  padding: 1.2rem;
-  font-size: 0.9rem;
-}
-
-
-@media only screen and (max-width: 480px) {
-  .navigation {
-    padding: 0.5rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .brand-logo {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .menu-list {
-    flex-direction: column;
-    gap: 0.4rem;
-    align-items: center;
-  }
-
-  .menu-list a {
-    display: block;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  main {
-    margin: 1rem auto;
-    padding: 0 1rem;
-  }
-
-  .content-block {
-    padding: 1rem;
-  }
-
-  .page-heading {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .block-title {
-    font-size: 1.2rem;
-  }
-
-  .sub-title {
-    font-size: 1rem;
-  }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 780px) {
-  .navigation {
-    padding: 0.75rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .brand-logo {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .menu-list {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .menu-list a {
-    display: block;
-    padding: 0.6rem;
-    font-size: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  main {
-    margin: 1.2rem auto;
-    padding: 0 1.2rem;
-  }
-
-  .content-block {
-    padding: 1.2rem;
-  }
-
-  .page-heading {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .block-title {
-    font-size: 1.4rem;
-  }
-
-  .sub-title {
-    font-size: 1.2rem;
-  }
-}
-
->>>>>>> 3b9d7b2c0dc91c2c6c70b10677a87fe3e990865b
