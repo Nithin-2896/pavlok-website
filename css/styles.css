@@ -1,4 +1,6 @@
-/* ====== Base Reset ====== */
+/* =====================================================================
+   CSS Reset & Base Styles
+===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,30 +8,62 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Use a robust font-stack with fallbacks */
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
   background-color: #f5f7fa;
-  color: #333333;
+  color: #333;
   line-height: 1.6;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* ====== Header & Navigation ====== */
+/* =====================================================================
+   Keyframes Animations
+===================================================================== */
+/* Fade in from below */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =====================================================================
+   Header & Navigation
+===================================================================== */
 .main-header {
-  background-color: #2c5e9e;
+  background-color: #2c5e9e; /* Brand Blue */
   padding: 0.8rem 1rem;
   width: 100%;
+  /* Apply fadeIn animation to header */
+  animation: fadeIn 0.8s ease-out;
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Brand logo styling with proper fallback and contrast */
 .brand-logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -37,44 +71,43 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Navigation list (default horizontal for Desktop) */
 .menu-list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.5rem;
-  width: 100%;
-  padding: 0 1rem;
+  padding: 0;
+  /* Apply slideIn animation to navigation items */
+  animation: slideIn 0.8s ease-out;
 }
 
-.menu-list li {
-  margin: 0;
-}
-
+/* Navigation links */
 .menu-list a {
+  text-decoration: none;
   color: #ffffff;
   padding: 0.5rem 0.8rem;
   border-radius: 4px;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
   font-size: 0.95rem;
   white-space: nowrap;
 }
 
-.menu-list a:hover {
+.menu-list a:hover,
+.menu-list a:focus {
   background-color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
 }
 
-/* ====== Content Area ====== */
+/* =====================================================================
+   Main Content Area
+===================================================================== */
 main {
-  flex: 1;
   width: 100%;
-}
-
-.content-area {
-  width: 100%;
+  max-width: 1200px;
   margin: 1.5rem auto;
   padding: 0 1rem;
+  animation: fadeIn 1s ease-out;
 }
 
 .page-heading {
@@ -82,17 +115,15 @@ main {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
   color: #2c5e9e;
-  width: 100%;
-  padding: 0 1rem;
 }
 
 .content-block {
   background: #ffffff;
   padding: 1.5rem;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  animation: fadeIn 1s ease-out;
 }
 
 .block-title {
@@ -110,39 +141,40 @@ main {
 .intro-paragraph {
   font-size: 1.05rem;
   margin: 1rem 0;
-  color: #444444;
+  color: #444;
 }
 
-/* ====== Lists ====== */
+/* =====================================================================
+   Lists
+===================================================================== */
 .custom-list {
   margin-left: 1.5rem;
-  color: #444444;
+  color: #444;
 }
 
 .custom-list li {
   margin-bottom: 0.6rem;
 }
 
-/* ====== Images ====== */
-.banner-img {
-  width: 100%;
-  object-fit: cover; /* Crops and scales the image to fill the container without distortion */
-  border-radius: 6px;
-  margin: 1.2rem 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+/* =====================================================================
+   Images
+===================================================================== */
+.banner-img,
 .banner-img-work {
   width: 100%;
-  max-height: 500px; /* Adjust based on your design */
+  border-radius: 6px;
+  margin: 1.2rem 0;
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.banner-img-work {
+  max-height: 500px;
+}
 
-
-/* ====== FAQ ====== */
+/* =====================================================================
+   FAQ Section
+===================================================================== */
 .faq-group {
   margin-top: 1.5rem;
 }
@@ -153,7 +185,6 @@ main {
   border-radius: 6px;
   margin-bottom: 0.8rem;
   overflow: hidden;
-  width: 100%;
 }
 
 .faq-query {
@@ -165,7 +196,7 @@ main {
 }
 
 .faq-response {
-  padding: 0;
+  padding: 0 1rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -176,81 +207,58 @@ main {
   max-height: 500px;
 }
 
-/* ====== Footer ====== */
+/* =====================================================================
+   Footer
+===================================================================== */
 .site-footer {
   background: #2c5e9e;
   color: #ffffff;
   text-align: center;
   padding: 1.2rem;
   font-size: 0.9rem;
-  margin-top: 2rem;
-  width: 100%;
 }
 
-/* ====== Responsive Design ====== */
-/* Tablet Devices (600px - 900px) */
-@media (max-width: 900px) {
-  .content-area {
-    padding: 0 1.5rem;
-  }
-  
-  .page-heading {
-    font-size: 2rem;
-  }
-  
-  .content-block {
-    padding: 1.3rem;
-  }
-  
-  .menu-list {
-    gap: 0.3rem;
-  }
-  
-  .menu-list a {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.9rem;
-  }
-}
+/* =====================================================================
+   Responsive Navigation Adjustments
+===================================================================== */
 
-/* Mobile Devices (up to 599px) */
-@media (max-width: 599px) {
+/* Mobile and Tablet Devices (up to 900px) */
+/* Vertical navigation for mobile and tablets */
+@media only screen and (max-width: 900px) {
   .navigation {
     padding: 0.5rem;
   }
   
   .brand-logo {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     margin-bottom: 0.3rem;
   }
   
   .menu-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.2rem;
-  }
-  
-  .menu-list li {
-    width: auto;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
   }
   
   .menu-list a {
-    display: inline-block;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.85rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .content-block {
+    padding: 1.1rem;
   }
   
   .page-heading {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
-  }
-  
-  .content-area {
-    padding: 0 1rem;
-    margin: 1rem auto;
-  }
-  
-  .content-block {
-    padding: 1.1rem;
   }
   
   .block-title {
@@ -261,3 +269,64 @@ main {
     font-size: 1.2rem;
   }
 }
+
+/* Small Tablet Devices (481px - 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .navigation {
+    padding: 0.75rem;
+  }
+  
+  .brand-logo {
+    font-size: 1.8rem;
+  }
+  
+  .menu-list {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  
+  .menu-list a {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main {
+    margin: 1rem auto;
+    padding: 0 0.8rem;
+  }
+  
+  .content-block {
+    padding: 1.2rem;
+  }
+  
+  .page-heading {
+    font-size: 1.9rem;
+  }
+  
+  .block-title {
+    font-size: 1.5rem;
+  }
+  
+  .sub-title {
+    font-size: 1.3rem;
+  }
+}
+
+  .content-block {
+    padding: 1.3rem;
+  }
+  
+  .page-heading {
+    font-size: 2rem;
+  }
+  
+  .block-title {
+    font-size: 1.6rem;
+  }
+  
+  .sub-title {
+    font-size: 1.4rem;
+  }
