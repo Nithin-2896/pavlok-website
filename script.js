@@ -1,25 +1,26 @@
-<<<<<<< HEAD
- document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-entry");
-  
-    // FAQ accordion toggle
-    faqItems.forEach((item) => {
-      const question = item.querySelector(".faq-query");
-      question.addEventListener("click", () => {
-        item.classList.toggle("active");
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-entry");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-query");
+    const icon = question.querySelector(".toggle-icon");
+
+    
+    question.setAttribute("role", "button");
+    question.setAttribute("tabindex", "0");
+
+    const toggleItem = () => {
+      item.classList.toggle("active");
+      icon.textContent = item.classList.contains("active") ? "−" : "+";
+    };
+
+    question.addEventListener("click", toggleItem);
+
+    question.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleItem();
+      }
     });
   });
-=======
- document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-entry");
-  
-    // FAQ accordion toggle
-    faqItems.forEach((item) => {
-      const question = item.querySelector(".faq-query");
-      question.addEventListener("click", () => {
-        item.classList.toggle("active");
-      });
-    });
-  });
->>>>>>> 3b9d7b2c0dc91c2c6c70b10677a87fe3e990865b
+});

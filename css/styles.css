@@ -1,4 +1,6 @@
-
+/* =====================================================================
+   CSS Reset & Base Styles
+===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-  /* font-stack with fallbacks */
+  /*font-stack with fallbacks */
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   background-color: #f5f7fa;
@@ -64,6 +66,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+
 .menu-list {
   list-style: none;
   display: flex;
@@ -71,7 +74,6 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0;
-  /* Apply slideIn animation to navigation items */
   animation: slideIn 0.8s ease-out;
 }
 
@@ -91,9 +93,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* =====================================================================
-   Main Content Area
-===================================================================== */
+
 main {
   width: 100%;
   max-width: 1200px;
@@ -135,10 +135,10 @@ main {
   margin: 1rem 0;
   color: #444;
 }
+ol,ul{
+  margin: 25px;
+}
 
-/* =====================================================================
-   Lists
-===================================================================== */
 .custom-list {
   margin-left: 1.5rem;
   color: #444;
@@ -148,9 +148,6 @@ main {
   margin-bottom: 0.6rem;
 }
 
-/* =====================================================================
-   Images
-===================================================================== */
 .banner-img,
 .banner-img-work {
   width: 100%;
@@ -164,44 +161,66 @@ main {
   max-height: 500px;
 }
 
-/* =====================================================================
-   FAQ Section
-===================================================================== */
+
 .faq-group {
-  margin-top: 1.5rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .faq-entry {
   background: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 6px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .faq-query {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #2c5e9e;
   color: #ffffff;
   padding: 0.8rem 1rem;
   cursor: pointer;
   font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px 6px 0 0;
+}
+
+.question-text {
+  flex: 1;
+}
+
+.toggle-icon {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #2c5e9e;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+  min-width: 32px;
+  text-align: center;
 }
 
 .faq-response {
   padding: 0 1rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background-color: #f7f9fc;
 }
 
 .faq-entry.active .faq-response {
+  max-height: 300px;
   padding: 1rem;
-  max-height: 500px;
 }
 
-/* =====================================================================
-   Footer
-===================================================================== */
+
 .site-footer {
   background: #2c5e9e;
   color: #ffffff;
@@ -211,114 +230,109 @@ main {
 }
 
 /* =====================================================================
-   Responsive Navigation Adjustments
+   Responsive for mobile
 ===================================================================== */
 
-/* Mobile and Tablet Devices (up to 900px) */
-/* Vertical navigation for mobile and tablets */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 480px) {
   .navigation {
     padding: 0.5rem;
-  }
-  
-  .brand-logo {
-    font-size: 1.7rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .menu-list {
     flex-direction: column;
-    gap: 0.3rem;
     align-items: center;
   }
-  
-  .menu-list a {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    width: 100%;
+
+  .brand-logo {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
     text-align: center;
   }
-  
-  main {
-    margin: 1rem auto;
-    padding: 0 0.5rem;
-  }
-  
-  .content-block {
-    padding: 1.1rem;
-  }
-  
-  .page-heading {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .block-title {
-    font-size: 1.4rem;
-  }
-  
-  .sub-title {
-    font-size: 1.2rem;
-  }
-}
 
-/* Small Tablet Devices (481px - 768px) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .navigation {
-    padding: 0.75rem;
-  }
-  
-  .brand-logo {
-    font-size: 1.8rem;
-  }
-  
   .menu-list {
     flex-direction: column;
     gap: 0.4rem;
     align-items: center;
   }
-  
+
   .menu-list a {
-    padding: 0.6rem;
-    font-size: 0.95rem;
+    display: block;
+    padding: 0.5rem;
+    font-size: 0.9rem;
     width: 100%;
     text-align: center;
   }
-  
+
   main {
     margin: 1rem auto;
-    padding: 0 0.8rem;
+    padding: 0 1rem;
   }
-  
+
   .content-block {
-    padding: 1.2rem;
+    padding: 1rem;
   }
-  
+
   .page-heading {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
+    text-align: center;
   }
-  
+
   .block-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-  
+
   .sub-title {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 
+/* =====================================================================
+   Responsive for tablet
+===================================================================== */
+
+@media only screen and (min-width: 481px) and (max-width: 780px) {
+  .navigation {
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand-logo {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .menu-list a {
+    display: block;
+    padding: 0.6rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  main {
+    margin: 1.2rem auto;
+    padding: 0 1.2rem;
+  }
+
   .content-block {
-    padding: 1.3rem;
+    padding: 1.2rem;
   }
-  
+
   .page-heading {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
   }
-  
+
   .block-title {
-    font-size: 1.6rem;
-  }
-  
-  .sub-title {
     font-size: 1.4rem;
   }
+
+  .sub-title {
+    font-size: 1.2rem;
+  }
+}
