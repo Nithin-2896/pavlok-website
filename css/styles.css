@@ -5,7 +5,7 @@
 }
 
 body {
-  /*font-stack*/
+
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   background-color: #f5f7fa;
@@ -27,7 +27,7 @@ body {
   }
 }
 
-/* Slide in from left */
+/* Slide in */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -226,9 +226,7 @@ ol,ul{
   font-size: 0.9rem;
 }
 
-/* =====================================================================
-   Responsive for mobile
-===================================================================== */
+/* Responsive for mobile */
 
 @media only screen and (max-width: 480px) {
   .navigation {
@@ -280,9 +278,7 @@ ol,ul{
   }
 }
 
-/* =====================================================================
-   Responsive for tablet
-===================================================================== */
+/* Responsive for tablet */
 
 @media only screen and (min-width: 481px) and (max-width: 780px) {
   .navigation {
