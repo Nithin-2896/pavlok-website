@@ -1,6 +1,3 @@
-/* =====================================================================
-   CSS Reset & Base Styles
-===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +5,7 @@
 }
 
 body {
-  /*font-stack with fallbacks */
+  /*font-stack*/
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   background-color: #f5f7fa;
